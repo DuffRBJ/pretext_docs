@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <docinfo>
+
+    <document-id>Baker-Jarvis-ShortTitleCamelCase</document-id>
+
+    <macros>\newcommand{\foo}{b^{ar}}</macros>
+    <latex-image-preamble>\usepackage{tikz}</latex-image-preamble>
+  </docinfo>
+
+  <article xml:id="shorttitlelowercase">
+    <title>The title of my groundbreaking paper</title>
+
+    <p>
+      <ol>
+        <li>
+          Find the eigenvalues and eigenspaces for the following matrix.
+          <md>
+            \begin{bmatrix}
+              2 \amp 1  \amp 0\\
+              1 \amp 2 \amp 1\\
+              1 \amp 1 \amp 3\\
+            \end{bmatrix}
+          </md>
+          
+        </li>
+
+      </ol>
+    </p>
+  </article>
+
+</pretext>
