@@ -1,33 +1,61 @@
-<?xml version='1.0' encoding='utf-8'?>
-<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xml:lang="en">
+  <article>
+    <title>Chapter 7 -- Integration</title>
 
-  <docinfo>
 
-    <document-id>Baker-Jarvis-ShortTitleCamelCase</document-id>
+   <section>
+  <title>7.0 — Review</title>
 
-    <macros>\newcommand{\foo}{b^{ar}}</macros>
-    <latex-image-preamble>\usepackage{tikz}</latex-image-preamble>
-  </docinfo>
+  <p>
+    A prerequisite for applying a strategy is a knowledge of the basic integration formulas.
+    In the following table we have collected the integrals from our previous list together
+    with several additional formulas that we have learned in this chapter.
+    Most of them should be memorized.
+  </p>
 
-  <article xml:id="shorttitlelowercase">
-    <title>The title of my groundbreaking paper</title>
+  <table>
+    <caption>Table of Integration Formulas</caption>
+    <tabular>
+      <row>
+        <cell><m>\int x^n\,dx = \frac{x^{n+1}}{n+1} \quad (n \neq -1)</m></cell>
+        <cell><m>\int \csc x \cot x\,dx = -\csc x</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \frac{1}{x}\,dx = \ln |x|</m></cell>
+        <cell><m>\int \sec x\,dx = \ln|\sec x + \tan x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int e^x\,dx = e^x</m></cell>
+        <cell><m>\int \csc x\,dx = \ln|\csc x - \cot x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int a^x\,dx = \frac{a^x}{\ln a}</m></cell>
+        <cell><m>\int \tan x\,dx = \ln|\sec x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \sin x\,dx = -\cos x</m></cell>
+        <cell><m>\int \cot x\,dx = \ln|\sin x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \sec^2 x\,dx = \tan x</m></cell>
+        <cell><m>\int \frac{1}{x^2+a^2}\,dx = \frac{1}{a}\tan^{-1}\!\left(\frac{x}{a}\right)</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \csc^2 x\,dx = -\cot x</m></cell>
+        <cell><m>\int \frac{1}{\sqrt{a^2-x^2}}\,dx = \sin^{-1}\!\left(\frac{x}{a}\right)</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \sec x \tan x\,dx = \sec x</m></cell>
+        <cell/>
+      </row>
+    </tabular>
+  </table>
 
-    <p>
-      <ol>
-        <li>
-          Find the eigenvalues and eigenspaces for the following matrix.
-          <md>
-            \begin{bmatrix}
-              2 \amp 1  \amp 0\\
-              1 \amp 2 \amp 1\\
-              1 \amp 1 \amp 3\\
-            \end{bmatrix}
-          </md>
-          
-        </li>
-
-      </ol>
-    </p>
+  <remark>
+    Constants of integration are omitted.
+  </remark>
+</section>
   </article>
 
 </pretext>
