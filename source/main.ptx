@@ -5,6 +5,7 @@
 
 
    <section>
+
   <title>7.0 — Review</title>
 
   <p>
@@ -55,7 +56,824 @@
   <remark>
     Constants of integration are omitted.
   </remark>
+
+
+  <subsection xml:id="substitution">
+  <title>u-Substitution</title>
+
+  <p>
+    The method of u-substitution (or just substitution) is a rule for integrals that
+    is the opposite of the chain rule for derivatives. It is a method for simplifying
+    integrals.
+  </p>
+
+  <p>It involves two main steps:</p>
+  <ul>
+    <li>Make simultaneous choices of <m>u = g(x)</m> and <m>du = g'(x)\,dx</m>.</li>
+    <li>
+      Rewrite <m>\int f(g(x))g'(x)\,dx</m> as <m>\int f(u)\,du</m> and compute.
+    </li>
+  </ul>
+
+  <p>
+    You will be expected to use u-substitution as needed in this course.
+  </p>
+
+  <example>
+    <title>Mental Substitution (Linear Inner Functions)</title>
+    <ol>
+      <li><m>\int e^{3x}\,dx</m></li>
+      <li><m>\int \sin(5\pi x + \frac{\pi}{4})\,dx</m></li>
+      <li><m>\int \sec^2(-9t)\,dt</m></li>
+    </ol>
+  </example>
+
+  <example>
+    <title>General u-Substitution</title>
+    <ol>
+      <li><m>\int \frac{2x^3}{\sqrt{x^4-4}}\,dx</m></li>
+      <li><m>\int \frac{\ln x}{x}\,dx</m></li>
+      <li><m>\int \frac{4\sec^2(2x)}{\sqrt{1-\tan^2(2x)}}\,dx</m></li>
+    </ol>
+  </example>
+</subsection>
 </section>
+
+
+<section>
+  <title>7.1 — Integration by Parts</title>
+
+  <p>
+    An antiderivative is the opposite of differentiation. To find the opposite of
+    the product rule, we use integration by parts.
+  </p>
+
+  <theorem>
+    <statement>
+      If <m>f</m> and <m>g</m> are differentiable functions, then
+      <me>
+        \frac{d}{dx}(f(x)g(x)) = f'(x)g(x) + f(x)g'(x).
+      </me>
+    </statement>
+  </theorem>
+
+  <formula>
+    <statement>
+      <me>\int u\,dv = uv - \int v\,du.</me>
+    </statement>
+  </formula>
+
+  <box>
+    <title>LIPET Rule</title>
+    <p>
+      <emph>L</emph>ogarithms,
+      <emph>I</emph>nverse Trig,
+      <emph>P</emph>olynomials,
+      <emph>E</emph>xponentials,
+      <emph>T</emph>rig Functions
+    </p>
+  </box>
+
+  <example>
+    <ol>
+      <li><m>\int x e^x\,dx</m></li>
+      <li><m>\int x^2 \ln x\,dx</m></li>
+      <li><m>\int \ln x\,dx</m></li>
+      <li><m>\int x^2 \sin x\,dx</m></li>
+    </ol>
+  </example>
+</section>
+
+
+<section>
+  <title>7.2 — Trigonometric Integrals</title>
+
+  <p>
+    Helpful trigonometric identities are listed below.
+  </p>
+
+  <table>
+    <caption>Trigonometric Identities</caption>
+    <tabular>
+      <row>
+        <cell><m>\sin^2 x + \cos^2 x = 1</m></cell>
+        <cell><m>\sin(2x) = 2\sin x \cos x</m></cell>
+        <cell><m>\sin^2 x = \frac{1}{2} - \frac{1}{2}\cos(2x)</m></cell>
+      </row>
+      <row>
+        <cell><m>\tan^2 x + 1 = \sec^2 x</m></cell>
+        <cell>
+          <m>\cos(2x) = \cos^2 x - \sin^2 x = 1 - 2\sin^2 x = 2\cos^2 x - 1</m>
+        </cell>
+        <cell><m>\cos^2 x = \frac{1}{2} + \frac{1}{2}\cos(2x)</m></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <subsection>
+    <title>Strategies</title>
+
+    <box>
+      <title>Evaluating <m>\int \sin^m x \cos^n x\,dx</m></title>
+      <ul>
+        <li>
+          If the power of <emph>sine</emph> is <emph>odd</emph>, let
+          <m>u = \cos x</m>. Save one factor of <m>\sin x</m> for <m>du</m>,
+          and convert remaining powers using <m>\sin^2 x = 1 - \cos^2 x</m>.
+        </li>
+        <li>
+          If the power of <emph>cosine</emph> is <emph>odd</emph>, let
+          <m>u = \sin x</m>. Save one factor of <m>\cos x</m> for <m>du</m>,
+          and convert remaining powers using <m>\cos^2 x = 1 - \sin^2 x</m>.
+        </li>
+        <li>
+          If both powers are <emph>even</emph>, use the identities
+          <m>\sin^2 x = \tfrac12 - \tfrac12 \cos(2x)</m> and
+          <m>\cos^2 x = \tfrac12 + \tfrac12 \cos(2x)</m>.
+        </li>
+      </ul>
+    </box>
+
+    <box>
+      <title>Evaluating <m>\int \tan^m x \sec^n x\,dx</m></title>
+      <ul>
+        <li>
+          If the power of <emph>tangent</emph> is <emph>odd</emph>, let
+          <m>u = \sec x</m>. Save a factor of <m>\sec x \tan x</m> for <m>du</m>,
+          and rewrite remaining powers using <m>\tan^2 x = \sec^2 x - 1</m>.
+        </li>
+        <li>
+          If the power of <emph>secant</emph> is <emph>even</emph>, let
+          <m>u = \tan x</m>. Save a factor of <m>\sec^2 x</m> for <m>du</m>,
+          and rewrite remaining powers using <m>\sec^2 x = 1 + \tan^2 x</m>.
+        </li>
+      </ul>
+    </box>
+
+    <ul>
+      <li>
+        For powers of only tangent, use <m>\tan^2 x = \sec^2 x - 1</m>.
+      </li>
+      <li>
+        For powers of only secant, use integration by parts.
+      </li>
+      <li>
+        If none of the above apply, try rewriting everything in terms of
+        sine and cosine.
+      </li>
+    </ul>
+
+    <table>
+      <caption>Useful Integration Formulas</caption>
+      <tabular>
+        <row>
+          <cell><m>\int \tan x\,dx = \ln|\sec x| + C</m></cell>
+        </row>
+        <row>
+          <cell><m>\int \sec x\,dx = \ln|\sec x + \tan x| + C</m></cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection>
+    <title>Examples</title>
+    <ul>
+      <li><m>\int \sin^3 x \cos^4 x\,dx</m></li>
+      <li><m>\int \sin^2(2x)\cos^3(2x)\,dx</m></li>
+      <li><m>\int \sin x \cos x\,dx</m></li>
+      <li><m>\int \sin^2 x \cos^2 x\,dx</m></li>
+      <li><m>\int \frac{\tan^3 x}{\sqrt{\sec x}}\,dx</m></li>
+      <li><m>\int \tan^3 x \sec^4 x\,dx</m></li>
+      <li><m>\int \tan^4 x\,dx</m></li>
+      <li><m>\int \frac{\sec x}{\tan^2 x}\,dx</m></li>
+      <li><m>\int \sec^3 x\,dx</m></li>
+    </ul>
+  </subsection>
+</section>
+
+<section>
+  <title>7.3 — Trigonometric Substitution</title>
+
+  <p>
+    For some stubborn integrals, one can use a substitution technique that is
+    different from ordinary <m>u</m>-substitution.
+    Examples include the
+    <xref url="https://en.wikipedia.org/wiki/Tangent_half-angle_substitution">
+      tangent half-angle substitution
+    </xref>
+    and <emph>trigonometric substitution</emph>.
+    In this section we focus on trigonometric substitution, often called
+    <q>trig sub</q>.
+  </p>
+
+  <p>
+    Trigonometric substitution works by replacing a variable with a
+    trigonometric function of a new variable in order to exploit
+    Pythagorean identities such as <m>\cos^2\theta = 1 - \sin^2\theta</m>.
+    For example, if
+    <me>x = \sin\theta,</me>
+    then
+    <me>
+      \sqrt{1 - x^2}
+      = \sqrt{1 - \sin^2\theta}
+      = \sqrt{\cos^2\theta}
+      = \cos\theta.
+    </me>
+  </p>
+
+  <alert type="warning">
+    Trigonometric substitutions must be one-to-one.
+    As a result, the trigonometric functions used have restricted domains.
+    Only certain substitutions—such as those appearing in the table below—
+    are valid. We will not focus heavily on these restrictions.
+  </alert>
+
+  <table>
+    <caption>Table of Trigonometric Substitutions</caption>
+    <tabular>
+      <row>
+        <cell><emph>Expression</emph></cell>
+        <cell><emph>Substitution</emph></cell>
+        <cell><emph>Identity Used</emph></cell>
+      </row>
+      <row>
+        <cell><m>\sqrt{a^2 - x^2}</m></cell>
+        <cell>
+          <m>x = a\sin\theta,\quad -\frac{\pi}{2} \le \theta \le \frac{\pi}{2}</m>
+        </cell>
+        <cell><m>1 - \sin^2\theta = \cos^2\theta</m></cell>
+      </row>
+      <row>
+        <cell><m>\sqrt{a^2 + x^2}</m></cell>
+        <cell>
+          <m>x = a\tan\theta,\quad -\frac{\pi}{2} &lt; \theta &lt; \frac{\pi}{2}</m>
+        </cell>
+        <cell><m>1 + \tan^2\theta = \sec^2\theta</m></cell>
+      </row>
+      <row>
+        <cell><m>\sqrt{x^2 - a^2}</m></cell>
+        <cell>
+          <m>x = a\sec\theta,\quad 0 \le \theta &lt; \frac{\pi}{2}
+          \text{ or } \pi \le \theta &lt; \frac{3\pi}{2}</m>
+        </cell>
+        <cell><m>\sec^2\theta - 1 = \tan^2\theta</m></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <subsection>
+    <title>Examples</title>
+    <ul>
+      <li><m>\int \sqrt{4 - x^2}\,dx</m></li>
+      <li><m>\int \frac{1}{\sqrt{4x^2 + 1}}\,dx</m></li>
+      <li><m>\int \frac{1}{\sqrt{x^2 - 9}}\,dx</m></li>
+      <li>
+        <m>\int_{\sqrt{3}}^2 \frac{\sqrt{x^2 - 3}}{x}\,dx</m>
+      </li>
+      <li><m>\int \frac{1}{(x^2 + 1)^{3/2}}\,dx</m></li>
+      <li><m>\int \frac{x}{\sqrt{x^2 + 6x + 12}}\,dx</m></li>
+      <li><m>\int \frac{x^2}{\sqrt{2x - x^2}}\,dx</m></li>
+    </ul>
+  </subsection>
+</section>
+
+<section>
+  <title>7.4 — Partial Fractions and Integrating Rational Functions</title>
+
+  <p>
+    Rational functions occur frequently in integration problems, and it is
+    important to know how to approach their integration.
+  </p>
+
+  <box>
+    <definition>
+      <statement>
+        A function <m>f</m> is <emph>rational</emph> if it can be written in the form
+        <me>f(x) = \frac{P(x)}{Q(x)},</me>
+        where <m>P</m> and <m>Q</m> are polynomials.
+      </statement>
+
+      <statement>
+        A rational function is called <emph>improper</emph> if the degree of
+        <m>P</m> is greater than or equal to the degree of <m>Q</m>.
+        Otherwise, it is called <emph>proper</emph>.
+      </statement>
+    </definition>
+  </box>
+
+  <p>
+    Examples of rational functions include
+    <me>
+      f(x) = \frac{3+x}{2x^2-4} \quad \text{(proper)},
+      \qquad
+      g(x) = \frac{x^3-2x+1}{x+4} \quad \text{(improper)},
+    </me>
+    and
+    <me>
+      h(x) = \frac{1}{(2x-3)(x+4)x^2} \quad \text{(proper)}.
+    </me>
+  </p>
+
+  <p>
+    This definition is analogous to the notion of improper fractions such as
+    <m>\frac{25}{7}</m>.
+  </p>
+
+  <box>
+    <title>Method of Partial Fractions</title>
+    <ol>
+      <li>
+        <emph>Divide if improper.</emph>
+        If <m>\frac{P(x)}{Q(x)}</m> is improper, divide to obtain
+        <me>
+          \frac{P(x)}{Q(x)} = S(x) + \frac{R(x)}{Q(x)},
+        </me>
+        where the degree of <m>R(x)</m> is less than that of <m>Q(x)</m>.
+        Apply the remaining steps to the proper fraction <m>\frac{R(x)}{Q(x)}</m>.
+      </li>
+
+      <li>
+        <emph>Factor the denominator.</emph>
+        Completely factor <m>Q(x)</m> into linear factors
+        <m>(px+q)^m</m> and irreducible quadratic factors
+        <m>(ax^2+bx+c)^n</m>.
+      </li>
+
+      <li>
+        <emph>Linear factors.</emph>
+        For each factor <m>(px+q)^m</m>, include
+        <me>
+          \frac{A_1}{px+q} + \frac{A_2}{(px+q)^2}
+          + \cdots + \frac{A_m}{(px+q)^m}.
+        </me>
+      </li>
+
+      <li>
+        <emph>Quadratic factors.</emph>
+        For each factor <m>(ax^2+bx+c)^n</m>, include
+        <me>
+          \frac{B_1x+C_1}{ax^2+bx+c}
+          + \frac{B_2x+C_2}{(ax^2+bx+c)^2}
+          + \cdots
+          + \frac{B_nx+C_n}{(ax^2+bx+c)^n}.
+        </me>
+      </li>
+    </ol>
+  </box>
+
+  <subsection>
+    <title>Examples</title>
+    <ul>
+      <li><m>\int \frac{x^2}{x+4}\,dx</m></li>
+      <li><m>\int \frac{2}{x^2-4x+3}\,dx</m></li>
+      <li>
+        <m>\int \frac{2x^3-11x^2+18x-7}{x^2-4x+3}\,dx</m>
+      </li>
+    </ul>
+
+    <p>
+      For each of the following, write the <emph>form</emph> of the partial fraction
+      decomposition, but do not determine the coefficients.
+    </p>
+
+    <ol>
+      <li><m>\frac{10}{5x^2-2x^3}</m></li>
+      <li><m>\frac{x^2-1}{x^3+x^2+x}</m></li>
+      <li>
+        <m>\frac{x^5+1}{(x^2-x)(x^4+2x^2+1)}</m>
+      </li>
+    </ol>
+
+    <ul>
+      <li><m>\int \frac{5x^2+20x+6}{x^3+2x^2+x}\,dx</m></li>
+      <li><m>\int \frac{2x^3-4x-8}{(x^2-x)(x^2+4)}\,dx</m></li>
+      <li><m>\int \frac{8x^3+13x}{(x^2+2)^2}\,dx</m></li>
+    </ul>
+  </subsection>
+</section>
+
+<section>
+  <title>7.5 — Strategies for Integration</title>
+
+  <p>
+    In this chapter you have studied several integration techniques that can be used
+    together with the basic integration rules. However, knowing how to use techniques
+    is not enough. You must also know <emph>when</emph> to use them.
+    Integration is fundamentally a problem of recognition.
+  </p>
+
+  <p>
+    Often, a small change in an integrand can require a completely different technique,
+    or even result in a function whose antiderivative is not elementary.
+  </p>
+
+  <me>
+    \begin{array}{ll}
+      \int x \ln x\,dx
+      = \frac{x^2}{2}\ln x - \frac{x^2}{4} + C
+      &amp; \text{Integration by Parts} \\[6pt]
+
+      \int \frac{\ln x}{x}\,dx
+      = \frac{(\ln x)^2}{2} + C
+      &amp; \text{Substitution with Power Rule} \\[6pt]
+
+      \int \frac{1}{x \ln x}\,dx
+      = \ln|\ln x| + C
+      &amp; \text{Substitution with Log Rule} \\[6pt]
+
+      \int \frac{x}{\ln x}\,dx
+      &amp; \text{Not an elementary function}
+    \end{array}
+  </me>
+
+  <p>
+    A prerequisite for applying any strategy is fluency with the basic integration
+    formulas. A table of these formulas appears again below for reference.
+  </p>
+
+  <table>
+    <caption>Table of Integration Formulas</caption>
+    <tabular>
+      <row>
+        <cell><m>\int x^n\,dx = \frac{x^{n+1}}{n+1} \quad (n \neq -1)</m></cell>
+        <cell><m>\int \csc x \cot x\,dx = -\csc x</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \frac{1}{x}\,dx = \ln |x|</m></cell>
+        <cell><m>\int \sec x\,dx = \ln|\sec x + \tan x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int e^x\,dx = e^x</m></cell>
+        <cell><m>\int \csc x\,dx = \ln|\csc x - \cot x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int a^x\,dx = \frac{a^x}{\ln a}</m></cell>
+        <cell><m>\int \tan x\,dx = \ln|\sec x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \sin x\,dx = -\cos x</m></cell>
+        <cell><m>\int \cot x\,dx = \ln|\sin x|</m></cell>
+      </row>
+      <row>
+        <cell><m>\int \sec^2 x\,dx = \tan x</m></cell>
+        <cell>
+          <m>\int \frac{1}{x^2+a^2}\,dx
+          = \frac{1}{a}\tan^{-1}\!\left(\frac{x}{a}\right)</m>
+        </cell>
+      </row>
+      <row>
+        <cell><m>\int \csc^2 x\,dx = -\cot x</m></cell>
+        <cell>
+          <m>\int \frac{1}{\sqrt{a^2-x^2}}\,dx
+          = \sin^{-1}\!\left(\frac{x}{a}\right),\; a&gt;0</m>
+        </cell>
+      </row>
+      <row>
+        <cell><m>\int \sec x \tan x\,dx = \sec x</m></cell>
+        <cell/>
+      </row>
+    </tabular>
+  </table>
+
+  <remark>
+    Constants of integration are omitted.
+  </remark>
+
+  <subsection>
+    <title>Strategy for Integration</title>
+
+    <p>
+      If you do not immediately see how to evaluate an integral, the following
+      four-step strategy is often effective.
+    </p>
+
+    <ol>
+      <li>
+        <emph>Simplify the integrand if possible.</emph>
+        Algebraic manipulation or trigonometric identities may simplify the integrand
+        and reveal an obvious technique.
+        <me>
+          \int \frac{\tan \theta}{\sec^2\theta}\,d\theta
+          = \int \sin\theta\cos\theta\,d\theta
+          = \frac12 \int \sin(2\theta)\,d\theta
+        </me>
+        <me>
+          \int (\sin x + \cos x)^2\,dx
+          = \int (1 + 2\sin x \cos x)\,dx
+        </me>
+      </li>
+
+      <li>
+        <emph>Look for an obvious substitution.</emph>
+        Try to identify a function <m>u = g(x)</m> whose derivative appears in the
+        integrand, up to a constant multiple.
+      </li>
+
+      <li>
+        <emph>Classify the integrand by form.</emph>
+        <ul>
+          <li>
+            <emph>Trigonometric functions.</emph>
+            Products of powers of trigonometric functions are handled using the methods
+            of Section 7.2.
+          </li>
+          <li>
+            <emph>Rational functions.</emph>
+            Use partial fractions as described in Section 7.4.
+          </li>
+          <li>
+            <emph>Products of algebraic and transcendental functions.</emph>
+            Try integration by parts using guidance from Section 7.1.
+          </li>
+          <li>
+            <emph>Radicals.</emph>
+            <ul>
+              <li>
+                Use trigonometric substitution for expressions involving
+                <m>\sqrt{\pm x^2 \pm a^2}</m>.
+              </li>
+              <li>
+                Use rationalizing substitutions for expressions such as
+                <m>\sqrt[n]{ax + b}</m>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <li>
+        <emph>Try again.</emph>
+        If the first three steps fail, remember that the two fundamental methods
+        are substitution and integration by parts.
+        Manipulating the integrand or combining techniques may be necessary.
+        <me>
+          \int \frac{1}{1-\cos x}\,dx
+          = \int \left(\csc^2 x + \csc x \cot x\right)\,dx
+        </me>
+      </li>
+    </ol>
+  </subsection>
+
+  <table>
+    <caption>Procedures for Fitting Integrands to Basic Rules</caption>
+    <tabular>
+      <row>
+        <cell><emph>Technique</emph></cell>
+        <cell><emph>Example</emph></cell>
+      </row>
+      <row>
+        <cell>Expand numerator</cell>
+        <cell><m>(1 + e^x)^2 = 1 + 2e^x + e^{2x}</m></cell>
+      </row>
+      <row>
+        <cell>Separate numerator</cell>
+        <cell><m>\frac{1+x}{x^2+1} = \frac{1}{x^2+1} + \frac{x}{x^2+1}</m></cell>
+      </row>
+      <row>
+        <cell>Complete the square</cell>
+        <cell><m>\frac{1}{\sqrt{2x-x^2}} = \frac{1}{\sqrt{1-(x-1)^2}}</m></cell>
+      </row>
+      <row>
+        <cell>Divide improper rational function</cell>
+        <cell><m>\frac{x^2}{x^2+1} = 1 - \frac{1}{x^2+1}</m></cell>
+      </row>
+      <row>
+        <cell>Use trigonometric identities</cell>
+        <cell><m>\cot^2 x = \csc^2 x - 1</m></cell>
+      </row>
+    </tabular>
+  </table>
+</section>
+
+<section>
+  <title>7.8 — Improper Integrals</title>
+
+  <p>
+    Recall the following theorem.
+  </p>
+
+  <box>
+    <theorem>
+      <statement>
+        If <m>f</m> is continuous on <m>[a,b]</m>, or if <m>f</m> has only a finite
+        number of jump discontinuities, then <m>f</m> is integrable on
+        <m>[a,b]</m>. That is, the definite integral
+        <m>\int_a^b f(x)\,dx</m> exists.
+      </statement>
+      <source>Page 375</source>
+    </theorem>
+  </box>
+
+  <p>
+    In this section we extend the concept of the definite integral to cases where
+    the interval is infinite, or where the function has an infinite
+    discontinuity. In either case, the integral is called an
+    <emph>improper integral</emph>.
+  </p>
+
+  <example>
+    <title>Improper Integral with Infinite Interval</title>
+    <statement>
+      <m>\int_1^{\infty} \frac{1}{x^2}\,dx</m>
+    </statement>
+    <figure>
+      <image source="chap7_8_fig1.png"/>
+    </figure>
+    <figure>
+      <image source="chap7_8_fig2.png"/>
+    </figure>
+  </example>
+
+  <box>
+    <definition>
+      <title>Improper Integral of Type 1</title>
+      <ol>
+        <li>
+          If <m>\int_a^t f(x)\,dx</m> exists for every <m>t \ge a</m>, then
+          <me>
+            \int_a^{\infty} f(x)\,dx
+            = \lim_{t\to\infty} \int_a^t f(x)\,dx,
+          </me>
+          provided this limit exists as a finite number.
+        </li>
+
+        <li>
+          If <m>\int_t^b f(x)\,dx</m> exists for every <m>t \le b</m>, then
+          <me>
+            \int_{-\infty}^b f(x)\,dx
+            = \lim_{t\to -\infty} \int_t^b f(x)\,dx,
+          </me>
+          provided this limit exists as a finite number.
+        </li>
+
+        <li>
+          If both <m>\int_{-\infty}^a f(x)\,dx</m> and
+          <m>\int_a^{\infty} f(x)\,dx</m> are convergent, then
+          <me>
+            \int_{-\infty}^{\infty} f(x)\,dx
+            =
+            \int_{-\infty}^a f(x)\,dx
+            +
+            \int_a^{\infty} f(x)\,dx.
+          </me>
+        </li>
+      </ol>
+
+      <p>
+        Improper integrals of this type are called <emph>convergent</emph> if the
+        corresponding limit exists and <emph>divergent</emph> otherwise.
+      </p>
+
+      <source>Page 520</source>
+    </definition>
+  </box>
+
+  <subsection>
+    <title>Examples</title>
+    <ul>
+      <li>
+        <m>\int \frac{1}{x}\,dx</m>
+        <figure>
+          <caption>Interesting Observation</caption>
+          <image source="chap7_8_fig3.png"/>
+          <image source="chap7_8_fig3.png"/>
+        </figure>
+      </li>
+
+      <li>
+        <m>\int_{-\infty}^0 x e^x\,dx</m>
+      </li>
+
+      <li>
+        <m>\int_{-\infty}^{\infty} \frac{1}{1+x^2}\,dx</m>
+      </li>
+    </ul>
+  </subsection>
+
+  <box>
+    <theorem>
+      <title>Integrals</title>
+      <statement>
+        The improper integral
+        <m>\int_1^{\infty} \frac{1}{x^p}\,dx</m>
+        converges if <m>p &gt; 1</m> and diverges if <m>p \le 1</m>.
+      </statement>
+    </theorem>
+  </box>
+
+  <box>
+    <definition>
+      <title>Improper Integral Type 2</title>
+      <ol>
+        <li>
+          If <m>f</m> is continuous on <m>[a,b)</m> and discontinuous at <m>b</m>,
+          then
+          <me>
+            \int_a^b f(x)\,dx
+            =
+            \lim_{t \to b^-} \int_a^t f(x)\,dx,
+          </me>
+          provided the limit exists.
+        </li>
+
+        <li>
+          If <m>f</m> is continuous on <m>(a,b]</m> and discontinuous at <m>a</m>,
+          then
+          <me>
+            \int_a^b f(x)\,dx
+            =
+            \lim_{t \to a^+} \int_t^b f(x)\,dx,
+          </me>
+          provided the limit exists.
+        </li>
+
+        <li>
+          If <m>f</m> has a discontinuity at <m>c</m>, where <m>a &lt; c &lt; b</m>, and both
+          integrals converge, then
+          <me>
+            \int_a^b f(x)\,dx
+            =
+            \int_a^c f(x)\,dx + \int_c^b f(x)\,dx.
+          </me>
+        </li>
+      </ol>
+
+      <p>
+        The integral is called <emph>convergent</emph> if the corresponding limits
+        exist, and <emph>divergent</emph> otherwise.
+      </p>
+
+      <source>Page 523</source>
+    </definition>
+  </box>
+
+  <figure>
+    <image source="chap7_8_fig5.png"/>
+  </figure>
+
+  <subsection>
+    <title>Examples</title>
+    <ul>
+      <li>
+        Calculate <m>\int_2^5 \frac{1}{x-2}\,dx</m> and determine whether it is
+        convergent or divergent.
+      </li>
+      <li>
+        <m>\int_0^{\pi/2} \sec x\,dx</m>
+      </li>
+      <li>
+        <m>\int_0^3 \frac{1}{x-1}\,dx</m>
+      </li>
+    </ul>
+  </subsection>
+
+  <subsection>
+    <title>A Comparison Test for Improper Integrals</title>
+
+    <p>
+      When it is difficult or impossible to find the exact value of an improper
+      integral, it is often still possible to determine whether it converges or
+      diverges.
+    </p>
+
+    <box>
+      <theorem>
+        <title>Comparison Theorem</title>
+        <statement>
+          Suppose <m>f</m> and <m>g</m> are continuous functions with
+          <m>f(x) \ge g(x) \ge 0</m> for <m>x \ge a</m>.
+          <ol>
+            <li>
+              If <m>\int_a^{\infty} f(x)\,dx</m> converges, then
+              <m>\int_a^{\infty} g(x)\,dx</m> converges.
+            </li>
+            <li>
+              If <m>\int_a^{\infty} g(x)\,dx</m> diverges, then
+              <m>\int_a^{\infty} f(x)\,dx</m> diverges.
+            </li>
+          </ol>
+        </statement>
+        <source>Page 525</source>
+      </theorem>
+    </box>
+
+    <p>
+      The following figure illustrates the Comparison Theorem.
+    </p>
+
+    <example>
+      <statement>
+        <m>\int_0^{\infty} e^{-x^2}\,dx</m>
+      </statement>
+      <figure>
+        <image source="chap7_8_fig6.png"/>
+      </figure>
+    </example>
+  </subsection>
+</section>
+
+
   </article>
 
 </pretext>
